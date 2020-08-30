@@ -13,7 +13,7 @@ public class Main {
                     "2 - show in which departments given employee was working\n" +
                     "Enter \"exit\" to terminate program.");
 
-            taskToDo = SCANNER.nextLine();
+            taskToDo = SCANNER.nextLine().toLowerCase();
             TASK_PICKER.pickTask(taskToDo);
         } while (!taskToDo.equalsIgnoreCase("exit"));
     }

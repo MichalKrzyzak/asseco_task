@@ -1,5 +1,7 @@
 package dao;
 
+import util.Constant;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -9,8 +11,7 @@ public class DBConnectorImpl implements DBConnector {
 
     public Connection getConnection() throws SQLException {
         if (conn == null) {
-            //todo do uzupełnienia informacje dot. połączenia z bazą
-            conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:port:service", "", "");
+            conn = DriverManager.getConnection(Constant.JDBC_URL, Constant.JDBC_USERNAME, Constant.JDBC_PASSWORD);
         }
         return conn;
     }
